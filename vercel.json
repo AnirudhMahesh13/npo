@@ -1,5 +1,10 @@
 {
   "buildCommand": "npx nx build peelcommunityclub",
-  "rootDirectory": "apps/peelcommunityclub",
-  "framework": "nextjs"
+  "outputDirectory": "../dist/apps/peelcommunityclub/.next",
+  "framework": "nextjs",
+  "build": {
+    "env": {
+      "NEXT_SKIP_CWD": "true"
+    }
+  }
 }
