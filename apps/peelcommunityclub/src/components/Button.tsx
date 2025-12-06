@@ -3,9 +3,10 @@ import React from 'react';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'md' | 'lg';
+  asChild?: boolean; // Add asChild prop here
 }
 
-export const Button = ({ children, variant = 'primary', size = 'md', className, ...props }: ButtonProps) => {
+export const Button = ({ children, variant = 'primary', size = 'md', asChild, className, ...props }: ButtonProps) => {
   const baseStyles = 'font-bold rounded-lg transition duration-300 ease-in-out';
 
   const variants = {
@@ -19,9 +20,11 @@ export const Button = ({ children, variant = 'primary', size = 'md', className, 
     lg: 'py-3 px-6 text-lg',
   };
 
+  const Component = asChild ? React.Fragment : 'button'; // Conditionally render children or button
+
   return (
-    <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className || ''}`} {...props}>
+    <Component className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className || ''}`} {...props}>
       {children}
-    </button>
+    </Component>
   );
 };
