@@ -1,4 +1,6 @@
 import './global.css';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const metadata = {
   title: 'Welcome to ',
@@ -12,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-gray-100 flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }
