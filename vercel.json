@@ -1,5 +1,5 @@
 {
   "buildCommand": "npx nx build peelcommunityclub",
-  "outputDirectory": "dist/apps/peelcommunityclub/.next",
+  "outputDirectory": "dist/apps/peelcommunityclub",
   "framework": "nextjs"
 }
